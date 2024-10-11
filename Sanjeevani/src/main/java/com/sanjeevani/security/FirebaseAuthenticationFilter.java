@@ -1,5 +1,6 @@
 package com.sanjeevani.security;
 
+import com.sanjeevani.service.FirebaseAuthService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -8,7 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import com.sanjeevani.service.FireBaseAuthService;
+
 import com.google.firebase.auth.FirebaseToken;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,7 +17,7 @@ public class FirebaseAuthenticationFilter extends OncePerRequestFilter {
 
 
     @Autowired
-    private FireBaseAuthService firebaseAuthService;
+    private FirebaseAuthService firebaseAuthService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)

@@ -156,3 +156,13 @@ When a patent is repsented reuest goes to Patent controller patent controller
     would  take patent illness and  ciondition  they have get location of patient and books an ambulce
 we need to speed things up location should be tracked by GPS  and
 User should get asking of situation like what is injury and servity and bloodgroup and ofcourse location
+
+
+
+
+WHat can and should admin do and who will be adminsitaors basic hireachy
+Admin basicallly is some one who is incharge so he can see all ambulance a,hospitals and users and their request,patient a
+and he san all see status and other stuff
+he need to mantain app so he  need to perform certain opertion such as CRUD on users, hospitals and ambulance,patinet s
+as this acn be long we give admin right to access hospitals ,ambulances and as well as pateint controllers that way it is  easy to maintain and
+mange our code so in controllers we will have all he crud operation admin will siply access to them and can control them

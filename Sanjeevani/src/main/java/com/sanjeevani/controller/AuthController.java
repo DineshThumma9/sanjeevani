@@ -1,26 +1,30 @@
 package com.sanjeevani.controller;
 
 import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.FirebaseToken;
 import com.google.firebase.auth.UserRecord;
-import com.sanjeevani.entity.User;
-import com.sanjeevani.service.FireBaseAuthService;
-import lombok.extern.slf4j.Slf4j;
+import com.sanjeevani.model.User;
+import com.sanjeevani.service.FirebaseAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 @RestController
 @RequestMapping("/api")
-@Slf4j
 public class AuthController {
 
+
+    private static final Logger log = LoggerFactory.getLogger(AuthController.class);
+
+
+
     @Autowired
-    FireBaseAuthService firebaseAuthService;
+    FirebaseAuthService firebaseAuthService;
 
     @PostMapping("/create-user")
     public ResponseEntity<String> createUser(@RequestBody User user) {
@@ -34,16 +38,6 @@ public class AuthController {
         }
     }
 
-    @PostMapping("/create-admin")
-    public ResponseEntity<String> createAdmin(@RequestBody User user) {
-        try {
-            firebaseAuthService.createAdmin(user);
-            return ResponseEntity.status(HttpStatus.CREATED).body("Admin created successfully.");
-        } catch (FirebaseAuthException e) {
-            log.error("Error creating admin", e);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error creating admin: " + e.getMessage());
-        }
-    }
 
 //    // src/main/java/com/sanjeevani/controller/AuthController.java
 //  //  @PostMapping("/login")
@@ -62,6 +56,9 @@ public class AuthController {
 //            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Wrong email or password.");
 //        }
 //    }
+
+
+
 
     @GetMapping("/get-user/{uid}")
     public ResponseEntity<UserRecord> getUser(@PathVariable String uid) {
