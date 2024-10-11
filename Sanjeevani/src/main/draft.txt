@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 
 
 Sanjeevani
@@ -166,3 +167,5 @@ and he san all see status and other stuff
 he need to mantain app so he  need to perform certain opertion such as CRUD on users, hospitals and ambulance,patinet s
 as this acn be long we give admin right to access hospitals ,ambulances and as well as pateint controllers that way it is  easy to maintain and
 mange our code so in controllers we will have all he crud operation admin will siply access to them and can control them
+=======
+>>>>>>> 0d25bddf2b91fa45b8504db506fdb6bc3d9afff3
